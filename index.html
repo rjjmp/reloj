@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital y Analógico</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="cuerpo">
+
+    <header class="encabezado">
+        <button id="botonModo" class="boton-modo">Modo oscuro</button>
+    </header>
+
+    <main class="principal">
+
+        <section class="seccion-reloj">
+
+            <article class="contenedor-reloj">
+                <div class="reloj" id="reloj">
+                    <div class="manecilla hora" id="hora"></div>
+                    <div class="manecilla minuto" id="minuto"></div>
+                    <div class="manecilla segundo" id="segundo"></div>
+                    <div class="punto-central"></div>
+                </div>
+            </article>
+
+            <article class="contenedor-digital">
+                <h1 id="horaDigital" class="hora-digital"></h1>
+                <p id="fecha" class="fecha"></p>
+            </article>
+
+        </section>
+
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

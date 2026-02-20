@@ -6,6 +6,7 @@
     <title>Reloj Digital y Analógico</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body id="cuerpo">
 
     <header class="encabezado">
@@ -15,24 +16,29 @@
     <main class="principal">
 
         <section class="seccion-reloj">
+    <article class="contenedor-reloj">
+        <div class="reloj">
+            <div class="manecilla hora" id="hora"></div>
+            <div class="manecilla minuto" id="minuto"></div>
+            <div class="manecilla segundo" id="segundo"></div>
+            <div class="punto-central"></div>
+        </div>
+    </article>
 
-            <article class="contenedor-reloj">
-                <div class="reloj" id="reloj">
-                    <div class="manecilla hora" id="hora"></div>
-                    <div class="manecilla minuto" id="minuto"></div>
-                    <div class="manecilla segundo" id="segundo"></div>
-                    <div class="punto-central"></div>
-                </div>
-            </article>
+    <article class="contenedor-derecho">
+    <h1 id="horaDigital" class="hora-digital"></h1>
 
-            <article class="contenedor-digital">
-                <h1 id="horaDigital" class="hora-digital"></h1>
-                <p id="fecha" class="fecha"></p>
-            </article>
+    <div class="contenedor-fecha">
+        <div id="diaNumero" class="dia-circulo"></div>
+        <p id="fechaTexto" class="fecha-texto"></p>
+    </div>
+</article>
 
-        </section>
+</section>
 
     </main>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>

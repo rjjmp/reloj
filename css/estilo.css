@@ -1,145 +1,210 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-
-body {
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background: #53EAFD;
-    color: #111;
-    transition: 0.3s ease;
-}
-
-.encabezado {
-    text-align: center;
-    padding: 20px;
-}
-
-.boton-modo {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: black;
-    color: white;
-    font-size: 14px;
-}
-
-.principal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-}
-
-.seccion-reloj {
-    display: flex;
-    align-items: center;
-    gap: 40px;
 }
 
 
-.reloj {
-    width: 200px;
-    height: 200px;
-    background: white;
-    border-radius: 25px;
-    position: relative;
-
-    box-shadow:
-    0 15px 35px rgba(117, 116, 116, 0.35),
-    0 5px 15px rgba(185, 185, 185, 0.2);
-}
-.manecilla {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom;
-    transform: translateX(-50%) rotate(0deg);
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:#59c5cf;
+    transition:0.3s ease;
+    color:#000;
 }
 
 
-.hora {
-    width: 6px;
-    height: 50px;
-    background: black;
-    border-radius: 5px;
+.encabezado{
+    width:100%;
+    padding:20px 40px;
+    display:flex;
+    justify-content:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.boton-modo{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    background:#000;
+    color:#fff;
+    transition:0.3s ease;
+}
+
+.boton-modo:hover{
+    opacity:0.8;
 }
 
 
-.minuto {
-    width: 4px;
-    height: 70px;
-    background: black;
-    border-radius: 5px;
+.principal{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:100px; 
 }
 
 
-.segundo {
-    width: 2px;
-    height: 90px;
-    background: #e74c3c;
+.seccion-reloj{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:100px;
 }
 
-.punto-central {
-    width: 10px;
-    height: 10px;
-    background: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.reloj{
+    width:220px;
+    height:220px;
+    background:#e4e4e4;
+    border-radius:30px;
+    position:relative;
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
 
-.hora-digital {
-    font-size: 56px;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.manecilla{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+    transform-origin:bottom;
+    transform:translateX(-50%) rotate(0deg);
+    border-radius:10px;
 }
 
-.fecha-inline {
-    font-size: 14px;
-    color: #494949;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-.dia-circulo {
-    background: black;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 50px;
-    font-size: 12px;
-    margin-left: 6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 24px;
-}
-.oscuro .dia-circulo {
-    background: white;
-    color: black;
+.hora{
+    width:6px;
+    height:60px;
+    background:black;
 }
 
-.oscuro {
-    background: #111;
-    color: white;
+.minuto{
+    width:4px;
+    height:80px;
+    background:black;
 }
 
-.oscuro .reloj {
-    background: #222;
+.segundo{
+    width:2px;
+    height:95px;
+    background:red;
 }
 
-.oscuro .boton-modo {
-    background: white;
-    color: black;
+.punto-central{
+    width:12px;
+    height:12px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
 
-.oscuro .fecha-inline {
-    color: #ccc;
+
+.contenedor-derecho{
+    display:flex;
+    align-items:center;
+    gap:30px;
 }
 
+.hora-digital{
+    font-size:70px;
+    font-weight:500;
+}
+
+
+.contenedor-fecha{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.fecha-texto{
+    order:1;
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+.dia-circulo{
+    order:2;
+    width:42px;
+    height:42px;
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-weight:bold;
+    font-size:16px;
+}
+
+
+body.oscuro{
+    background:#111;
+    color:white;
+}
+
+body.oscuro .reloj{
+    background:#333;
+}
+
+body.oscuro .hora,
+body.oscuro .minuto{
+    background:white;
+}
+
+body.oscuro .punto-central{
+    background:white;
+}
+
+body.oscuro .dia-circulo{
+    background:white;
+    color:black;
+}
+
+body.oscuro .boton-modo{
+    background:white;
+    color:black;
+}
+
+
+@media (max-width:768px){
+
+    .seccion-reloj{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .contenedor-derecho{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .hora-digital{
+        font-size:42px;
+    }
+
+    .reloj{
+        width:170px;
+        height:170px;
+    }
+
+    .hora{ height:45px; }
+    .minuto{ height:60px; }
+    .segundo{ height:70px; }
+
+    .contenedor-fecha{
+        justify-content:center;
+    }
+}
